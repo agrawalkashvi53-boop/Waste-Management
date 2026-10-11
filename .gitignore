@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+data/*.db*
+data/trashnet/
+model/_saved_model/
+model/*.keras
+.pytest_cache/

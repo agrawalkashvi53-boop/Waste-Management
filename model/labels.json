@@ -1,0 +1,10 @@
+{
+  "version": "mobilenetv2-trashnet-v1",
+  "input_size": 224,
+  "preprocess": "embedded",
+  "labels": ["cardboard", "glass", "metal", "paper", "plastic", "trash"],
+  "recyclable": {
+    "cardboard": true, "glass": true, "metal": true,
+    "paper": true, "plastic": true, "trash": false
+  }
+}

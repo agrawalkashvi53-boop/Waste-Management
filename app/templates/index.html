@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Sorting line</h1>
+<p class="muted">Upload belt-camera frames (up to 20). Confident items are auto-routed to a bale lane;
+uncertain ones are sent to the manual-review queue.</p>
+<div class="panel">
+  <label>Line / camera station
+    <input id="line" value="LINE-1" maxlength="32">
+  </label>
+  <div id="drop" class="drop" tabindex="0">Drop images here or click to choose
+    <input id="file" type="file" accept="image/*" multiple hidden>
+  </div>
+  <button id="run" class="btn" disabled>Classify</button>
+</div>
+<div id="results" class="grid"></div>
+{% endblock %}

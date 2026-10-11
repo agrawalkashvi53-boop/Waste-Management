@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Plant dashboard</h1>
+<div class="panel row">
+  <label>Window
+    <select id="hours">
+      <option value="24">Last 24 hours</option>
+      <option value="168" selected>Last 7 days</option>
+      <option value="720">Last 30 days</option>
+    </select>
+  </label>
+  <label>Line <select id="linesel"><option value="">All lines</option></select></label>
+</div>
+<div id="kpis" class="kpis"></div>
+<div class="charts">
+  <div class="panel"><h3>Throughput</h3><canvas id="c-time"></canvas></div>
+  <div class="panel"><h3>Material mix</h3><canvas id="c-class"></canvas></div>
+  <div class="panel"><h3>Model confidence</h3><canvas id="c-conf"></canvas></div>
+  <div class="panel"><h3>Operator-verified accuracy</h3><div id="bands"></div>
+    <h3>Top confusions (verified)</h3><div id="conf"></div></div>
+</div>
+<div class="panel"><h3>By line</h3><div id="lines"></div></div>
+{% endblock %}
+{% block scripts %}<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>{% endblock %}

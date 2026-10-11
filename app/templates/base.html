@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Waste Sorting QC · SDG 12</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body data-page="{{ page }}">
+  <header>
+    <div class="brand">♻ Waste Sorting QC <span class="tag">SDG 12 · Responsible Production</span></div>
+    <nav>
+      <a href="/" class="{{ 'on' if page=='classify' }}">Sorting line</a>
+      <a href="/dashboard" class="{{ 'on' if page=='dashboard' }}">Dashboard</a>
+      <a href="/review" class="{{ 'on' if page=='review' }}">Review queue</a>
+      <a href="/api/export.csv">Export CSV</a>
+    </nav>
+  </header>
+  <div id="banner" class="banner" hidden></div>
+  <main>{% block content %}{% endblock %}</main>
+  <footer>Decision support for material-recovery facilities. Low-confidence items go to a human, always.</footer>
+  {% block scripts %}{% endblock %}
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
